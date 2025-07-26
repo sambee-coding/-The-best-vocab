@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
 }
-body{
+.header{
   background: rgba(0, 0, 20, 0) url('Create\ a\ nighttime\ v.png');
- width: 100%;
+ height: 100vh;
  background-size: cover;
  background-position: center;
  font-family:Arial, Helvetica, sans-serif ;
+  position:relative;
+  width: 100%;
 
 }
 
@@ -30,9 +32,9 @@ body{
   color: white;
   text-align: center;
 }
-.text{
+.text h1{
     text-align: center;
-    margin-top: 20px;
+    padding-top: 20px;
     color: white;
     
 }
@@ -42,36 +44,95 @@ body{
     left: 50%;
     color: white;
 }
-.text{
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-    
-}
-header nav{
+
+.header nav{
     display: flex;
     justify-content: space-between;
     position: absolute;
     right: 10px;
 }
-header nav ul{
+.header nav ul{
     display: flex;
     gap: 15px;
     list-style: none;
 }
-header nav ul li{
+.header nav ul li{
     font-size: 18px;
     font-weight: bolder;
   
 }
-header nav ul li a {
+.header nav ul li a {
       text-decoration: none;
        color: #EF9120;
 }
-header nav ul li a:hover{
+.header nav ul li a:hover{
     color:#260C00;
     transition: 0.5s ease-in-out;
     text-decoration: underline ;
     text-decoration-color: #EF9120;
    text-underline-offset:  0.2em;
 }
+.text-to-intro{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bolder;
+    font-size: 35px;
+}
+.what-you-will-get{
+     margin: 5% auto; /* center horizontally */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  gap: 20px;
+  max-width: 800px; /* optional limit */
+   
+}
+.box{
+    width: 300px;
+    background-color: #EF9120;
+    margin: 20px;
+    height: 20vh;
+    border-radius: 16px;
+    border:2px solid #260C00;
+}
+.box h2{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+footer .more-info{
+    width:100%;
+    background-color: #260C00;
+}
+.more-info ul {
+    text-align: center;
+    padding-top: 20px;
+
+}
+.more-info ul li{
+    font-size: 30px;
+     list-style: none;
+     padding-bottom: 5px;
+}
+.more-info ul li a{
+    text-decoration: none;
+    color: white;
+   
+}
+ .icon ion-icon{
+    color: white;
+    font-size: 28px;
+     padding-left: 14px;
+     padding-top: 5px;
+    transition: 0.3s ease-in-out;
+ 
+
+        }
+ .icon ion-icon:hover{
+    color: orangered;
+
+
+ }
+ .icon{
+       text-align: center;
+       padding-bottom: 20px;
+ }
