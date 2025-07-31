@@ -21,7 +21,7 @@
     
           let example=data[0].meanings[0].definitions[0].example;
           if(example){
-        document.querySelector(".examp-output").innerHTML=`<p><strong>Definition:</strong> ${example}</p>`;
+        document.querySelector(".examp-output").innerHTML=`<p><strong>Example:</strong> ${example}</p>`;
           }
         else{
           document.querySelector(".examp-output").innerHTML="There is no avialiable example."
