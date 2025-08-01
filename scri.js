@@ -24,9 +24,27 @@
         document.querySelector(".examp-output").innerHTML=`<p><strong>Example:</strong> ${example}</p>`;
           }
         else{
-          document.querySelector(".examp-output").innerHTML="There is no avialiable example."
+      document.querySelector(".examp-output").innerHTML = "";
+
         }
+          // ✅ Extract part of speech
+        let partOfSpeech = data[0].meanings[0].partOfSpeech;
+        if (partOfSpeech) {
+          document.querySelector(".speech-output").innerHTML =
+            `<p><strong>Part of Speech:</strong> ${partOfSpeech}</p>`;
+        } else {
+          document.querySelector(".speech-output").innerHTML = "";
+        }
+       let synonyms = data[0].meanings[0].definitions[0].synonyms;
+if (synonyms && synonyms.length > 0) {
+  document.querySelector(".synonym-output").innerHTML =
+    `<p><strong>Synonyms:</strong> ${synonyms.join(", ")}</p>`;
+} else {
+  document.querySelector(".synonym-output").innerHTML =
+    `<p>Oops! No synonyms provided.</p>`;
+}
       })
+    
      .catch((error) =>{
         document.querySelector(".def-output").innerHTML = `<p>${error.message}</p>`;
       document.querySelector(".example-output").innerHTML = "";
@@ -36,5 +54,13 @@
         
     }
       let searchForm=document.querySelector("#search");
-  searchForm.addEventListener("click",searchSubmit);
+  searchForm.addEventListener("submit",searchSubmit);
+function getBackupAudio(word) {
+ 
+  let backupAudioUrl = `https://api.dictionaryapi.dev/media/pronunciations/en/${word}-us.mp3`;
 
+  document.querySelector(".Audio-pronunciation").innerHTML = `
+    <p><strong>Backup Audio:</strong></p>
+    <audio controls src="${backupAudioUrl}"></audio>
+  `;
+}
